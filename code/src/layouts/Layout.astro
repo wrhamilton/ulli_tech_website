@@ -2,6 +2,7 @@
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Consumers', href: '/consumers' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -29,8 +30,7 @@ const navItems = [
     <header class="site-header">
       <div class="container nav-wrap">
         <a href="/" class="brand" aria-label="ULLItech home">
-          <span class="brand-mark">U</span>
-          <span>ULLItech</span>
+          <img src="/ullitech_logo_v1_pub.png" alt="ULLItech logo" class="brand-logo" />
         </a>
 
         <nav class="main-nav" aria-label="Main navigation">
@@ -47,16 +47,18 @@ const navItems = [
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div>
-          <h3>ULLItech</h3>
-          <p>Reliable IT support, custom software, and hardware installs for growing businesses.</p>
+        <div class="footer-brand-block">
+          <a href="/" class="footer-brand" aria-label="ULLItech home">
+            <img src="/ullitech_logo_v1_pub.png" alt="ULLItech logo" class="footer-logo" />
+          </a>
+          <p>Reliable IT support, custom software, and hardware installs for you.</p>
         </div>
         <div>
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:+14374882190">437-488-2190</a></li>
             <li><a href="mailto:will@ullitech.ca">will@ullitech.ca</a></li>
-            <li>Shelburne and Orangeville, Ontario, with service up to 50 miles from the midpoint between the two.</li>
+            <li>Shelburne and Orangeville, Ontario, and surrounding areas.</li>
           </ul>
         </div>
       </div>
@@ -150,24 +152,16 @@ const navItems = [
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
-    font-weight: 800;
-    font-size: 1.05rem;
-    letter-spacing: 0.03em;
-    color: var(--secondary);
+    justify-content: center;
+    min-width: 0;
   }
 
-  .brand-mark {
-    width: 2.1rem;
-    height: 2.1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--primary), var(--teal));
-    color: white;
-    font-weight: 800;
-    box-shadow: 0 12px 22px rgba(36, 59, 85, 0.2);
+  .brand-logo {
+    display: block;
+    width: clamp(140px, 16vw, 210px);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(36, 59, 85, 0.12));
   }
 
   .main-nav {
@@ -413,7 +407,7 @@ const navItems = [
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--teal));
+    background: linear-gradient(135deg, var(--primary-dark), var(--teal));
   }
 
   .pricing-card {
@@ -466,6 +460,23 @@ const navItems = [
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+  }
+
+  .footer-brand-block {
+    max-width: 360px;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-logo {
+    width: clamp(150px, 20vw, 220px);
+    height: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .site-footer h3,
