@@ -3,14 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.23.4"
+    "node": ">=24.0.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "check:node": "node -e \"const major=Number(process.versions.node.split('.')[0]); if (major < 24) { console.error('This project requires Node 24+. Current version: ' + process.versions.node); process.exit(1); }\"",
+    "dev": "npm run check:node && astro dev",
+    "build": "npm run check:node && astro build",
+    "preview": "npm run check:node && astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "npm run check:node && astro check"
   },
   "dependencies": {
     "astro": "^7.4.4"
